@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
+import InputTemplate from '../components/InputTemplate';
 
 class InputContainer extends Component {
   render() {
     return (
-      <div>
-        
-      </div>
+      <InputTemplate />
     );
   }
 }

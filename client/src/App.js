@@ -1,12 +1,12 @@
 import React from 'react';
-import Input from './components/Input';
-import Todos from './components/Todos';
+import InputTemplate from './components/InputTemplate';
+import TodosTemplate from './components/TodosTemplate';
 
 const App = () => {
   return (
     <div>
-      <Input />
-      <Todos />
+      <InputTemplate />
+      <TodosTemplate />
     </div>
   );
 };
