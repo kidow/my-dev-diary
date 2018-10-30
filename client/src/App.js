@@ -1,12 +1,12 @@
 import React from 'react';
-import InputTemplate from './components/InputTemplate';
-import TodosTemplate from './components/TodosTemplate';
+import InputContainer from './containers/InputContainer';
+import TodosContainer from './containers/TodosContainer';
 
 const App = () => {
   return (
     <div>
-      <InputTemplate />
-      <TodosTemplate />
+      <InputContainer />
+      <TodosContainer />
     </div>
   );
 };

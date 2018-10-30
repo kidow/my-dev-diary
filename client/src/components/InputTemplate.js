@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class InputTemplate extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    );
-  }
-}
+const InputTemplate = ({ value, onChange, onInsert }) => {
+  return (
+    <form>
+      <input onChange={onChange} value={value}/>
+      <button onClick={onInsert}>추가</button>
+    </form>
+  );
+};
 
 export default InputTemplate;
