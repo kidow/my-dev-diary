@@ -4,10 +4,11 @@ import * as inputActions from '../store/input'
 import * as todosActions from '../store/todos'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import api from '../api'
 
 class InputContainer extends Component {
 
-  id = 1
+  id = -1
   getId = () => {
     return ++this.id;
   }
@@ -28,6 +29,7 @@ class InputContainer extends Component {
     if (!value) {
       alert('내용을 입력하세요')
     } else {
+      api.insert(value)
       TodosActions.insert(todo)
       InputActions.setInput('')
     }

@@ -2,12 +2,11 @@ const mongoose = require('mongoose')
 
 const Todos = new mongoose.Schema({
   text: {
-    type: String,
-    required: true
+    type: String
   },
   createdAt: {
     type: Date,
-    default: Date.now
+    default: new Date()
   }
 })
 

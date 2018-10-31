@@ -3,6 +3,7 @@ const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
 
+const indexRouter = require('./src/routes')
 const postRouter = require('./src/routes/post')
 
 const app = express()
@@ -16,8 +17,9 @@ mongoose.connect(process.env.MONGO_URI, { dbName: 'mydevdiary', useNewUrlParser:
   }
 })
 
-app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
 
+app.use('/', indexRouter)
 app.use('/api/post', postRouter)
 
 app.get('*', (req, res) => {
