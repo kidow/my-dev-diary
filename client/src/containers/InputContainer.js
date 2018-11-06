@@ -30,14 +30,21 @@ class InputContainer extends Component {
       this.getUserList()
     }
   }
+  
+  handleKeyPress = e => {
+    if(e.key === 'Enter') {
+      this.handleInsert()
+    }
+  }
 
   render() {
     const { value } = this.props
-    const { handleChange, handleInsert } = this
+    const { handleChange, handleInsert, handleKeyPress } = this
     return (
       <InputTemplate 
         onChange={handleChange}
         onInsert={handleInsert}
+        onKeyPress={handleKeyPress}
         value={value}
       />
     );
