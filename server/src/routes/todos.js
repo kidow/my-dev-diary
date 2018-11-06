@@ -4,7 +4,7 @@ const Todos = require('../models/Todos')
 
 router.get('/', async (req, res, next) => {
   try {
-    const todos = await Todos.find({})
+    const todos = await Todos.find({}).sort({ _id: -1 })
     res.json(todos)
   } catch (e) {
     console.log(e)

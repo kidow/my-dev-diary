@@ -3,16 +3,21 @@ import moment from 'moment'
 import 'moment/locale/ko'
 
 const TodosTemplate = ({todos}) => {
-  console.log('todos :', todos)
-  const todoList = todos.map(todo => {
+  const dateList = todos.map(date => {
+    return moment(date.createdAt).format('ll')
+  })
+  const dates = [...new Set(dateList)]
+  const result = dates.map((date, index) => {
     return (
-      <div key={todo._id}>
-        <span>{todo.text} </span>
-        <span>{moment(todo.createdAt).format('ll')}</span>
+      <div key={index}>
+        <h2>{date}</h2>
+        {todos.filter(item => moment(item.createdAt).format('ll')).map((item, i) => {
+          return <div key={i}>{item.text}</div>
+        })}
       </div>
     )
   })
-  return todoList
+  return result
 };
 
 export default TodosTemplate;
