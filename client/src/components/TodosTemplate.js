@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TodosTemplate = ({todos}) => {
-  console.log(todos)
+  console.log('todos :', todos)
   const todoList = todos.map(todo => {
     return todo.text
   })

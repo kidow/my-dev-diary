@@ -1,6 +1,6 @@
 import { Map, List } from 'immutable'
 import { handleActions, createAction } from 'redux-actions'
-import pender from 'redux-pender'
+import { pender } from 'redux-pender'
 import * as api from '../api'
 
 const TOGGLE = 'todos/TOGGLE'

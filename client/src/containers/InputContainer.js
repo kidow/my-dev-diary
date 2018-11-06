@@ -6,6 +6,11 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 class InputContainer extends Component {
+  getUserList = () => {
+    const { TodosActions } = this.props
+    TodosActions.getTodos()
+  }
+
   handleChange = e => {
     const { value } = e.target;
     const { InputActions } = this.props;
@@ -22,6 +27,7 @@ class InputContainer extends Component {
     } else {
       TodosActions.postTodos(todo)
       InputActions.initialize()
+      this.getUserList()
     }
   }
 
