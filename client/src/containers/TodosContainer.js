@@ -15,16 +15,17 @@ class TodosContainer extends Component {
   }
   
   render() {
-    const { todos } = this.props
+    const { todos, learned } = this.props
     return (
-      <TodosTemplate todos={todos}/>
+      <TodosTemplate todos={todos} learned={learned}/>
     );
   }
 }
 
 export default connect(
   state => ({
-    todos: state.todos.get('todos')
+    todos: state.todos.get('todos'),
+    learned: state.input.get('learned')
   }),
   dispatch => ({
     TodosActions: bindActionCreators(todosActions, dispatch)

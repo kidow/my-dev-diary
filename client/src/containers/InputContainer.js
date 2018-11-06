@@ -17,11 +17,14 @@ class InputContainer extends Component {
     InputActions.setInput(value);
   }
 
+  handleToggle = (learned) => {
+    const { InputActions } = this.props
+    InputActions.toggle(learned)
+  }
+
   handleInsert = () => {
     const { InputActions, TodosActions, value } = this.props;
-    const todo = {
-      text: value
-    };
+    const todo = { text: value };
     if (!value) {
       alert('내용을 입력하세요')
     } else {
@@ -38,14 +41,16 @@ class InputContainer extends Component {
   }
 
   render() {
-    const { value } = this.props
-    const { handleChange, handleInsert, handleKeyPress } = this
+    const { value, learned } = this.props
+    const { handleChange, handleInsert, handleKeyPress, handleToggle } = this
     return (
       <InputTemplate 
         onChange={handleChange}
         onInsert={handleInsert}
         onKeyPress={handleKeyPress}
+        onToggle={handleToggle}
         value={value}
+        learned={learned}
       />
     );
   }
@@ -53,7 +58,8 @@ class InputContainer extends Component {
 
 export default connect(
   state => ({
-    value: state.input.get('value')
+    value: state.input.get('value'),
+    learned: state.input.get('learned')
   }),
   dispatch => ({
     InputActions: bindActionCreators(inputActions, dispatch),
