@@ -2,10 +2,10 @@ import React from 'react';
 
 const InputTemplate = ({ value, onChange, onInsert }) => {
   return (
-    <form>
-      <input onChange={onChange} value={value}/>
+    <div>
+      <input onChange={onChange} value={value} placeholder='todo'/>
       <button onClick={onInsert}>추가</button>
-    </form>
+    </div>
   );
 };
 

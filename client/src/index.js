@@ -4,12 +4,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'gestalt/dist/gestalt.css';
 
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import reducers from './store'
+import penderMiddleware from 'redux-pender'
 
-const store = createStore(reducers, composeWithDevTools())
+const store = createStore(reducers, composeWithDevTools(applyMiddleware(penderMiddleware())))
 
 ReactDOM.render(
   <Provider store={store}>

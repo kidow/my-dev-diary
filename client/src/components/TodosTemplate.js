@@ -1,20 +1,15 @@
-import React, { Component } from 'react';
-import ItemTemplate from './ItemTemplate';
-import axios from 'axios'
+import React from 'react';
 
-class TodosTemplate extends Component {
-  componentDidMount() {
-    axios.get('/post').then(res => res.data)
-  }
-  render() {
-    const { todos } = this.props
-    const todoList = todos.map(todo => (
-      <ItemTemplate key={todo.get('id')}>
-        {todo.get('text')}
-      </ItemTemplate>
-    ))
-    return todoList
-  }
-}
+const TodosTemplate = ({todos}) => {
+  console.log(todos)
+  const todoList = todos.map(todo => {
+    return todo.text
+  })
+  return (
+    <div>
+      {todoList}
+    </div>
+  );
+};
 
 export default TodosTemplate;

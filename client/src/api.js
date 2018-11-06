@@ -1,6 +1,4 @@
 import axios from 'axios'
 
-export default {
-  read: () => axios.get('/'),
-  insert: text => axios.post('/api/post', { text })
-}
+export const getTodos = () => axios.get('/api/todos')
+export const postTodos = text => axios.post('/api/todos', { text })

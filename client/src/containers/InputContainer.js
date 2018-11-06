@@ -4,44 +4,34 @@ import * as inputActions from '../store/input'
 import * as todosActions from '../store/todos'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import api from '../api'
 
 class InputContainer extends Component {
-
-  id = -1
-  getId = () => {
-    return ++this.id;
-  }
-
-  onChange = e => {
+  handleChange = e => {
     const { value } = e.target;
     const { InputActions } = this.props;
     InputActions.setInput(value);
   }
 
-  onInsert = e => {
-    e.preventDefault()
+  handleInsert = () => {
     const { InputActions, TodosActions, value } = this.props;
     const todo = {
-      id: this.getId(),
       text: value
     };
     if (!value) {
       alert('내용을 입력하세요')
     } else {
-      api.insert(value)
-      TodosActions.insert(todo)
-      InputActions.setInput('')
+      TodosActions.postTodos(todo)
+      InputActions.initialize()
     }
   }
 
   render() {
     const { value } = this.props
-    const { onChange, onInsert } = this
+    const { handleChange, handleInsert } = this
     return (
       <InputTemplate 
-        onChange={onChange}
-        onInsert={onInsert}
+        onChange={handleChange}
+        onInsert={handleInsert}
         value={value}
       />
     );

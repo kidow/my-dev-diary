@@ -5,6 +5,14 @@ import { connect } from 'react-redux'
 import * as todosActions from '../store/todos'
 
 class TodosContainer extends Component {
+  getTodoList = () => {
+    const { TodosActions } = this.props
+    TodosActions.getTodos()
+  }
+
+  componentDidMount() {
+    this.getTodoList()
+  }
   
   render() {
     const { todos } = this.props
@@ -16,7 +24,7 @@ class TodosContainer extends Component {
 
 export default connect(
   state => ({
-    todos: state.todos
+    todos: state.todos.get('todos')
   }),
   dispatch => ({
     TodosActions: bindActionCreators(todosActions, dispatch)
