@@ -15,7 +15,7 @@ Front-end :
   * redux
   * react-redux
   * redux-devtools-extension
-* moment (Date Libiray)
+* moment (Date Library)
 * axios
 * Sass
 
