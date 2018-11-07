@@ -1,3 +1,3 @@
 # my-dev-diary
 
-![sample]('./client/public/sample.png')
+![sample](./client/public/sample.png)
