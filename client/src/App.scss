@@ -1,0 +1,33 @@
+.main {
+  margin: 0 auto;
+  width: 500px;
+  margin-top: 4rem;
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  padding-top: 2rem;
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+    width: calc(100% - 2rem);
+  }
+  h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 300;
+    margin: 0;
+  }
+  .content {
+    margin-top: 2rem;
+  }
+  .explain {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-around;
+    .learned {
+      color: #ee5253;
+      font-weight: 600;
+    }
+    .to-learn {
+      font-weight: 600;
+    }
+  }
+}

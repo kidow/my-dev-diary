@@ -1,0 +1,42 @@
+.todo-input {
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  padding: 1rem;
+  input {
+    flex: 1;
+    font-size: 1.1rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ced4da;
+  }
+  .learned {
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    .checkbox {
+      cursor: pointer;
+      transform: scale(1.5);
+      :checked::after {
+        background: #ee5253;
+      }
+    }
+  }
+  .add-button {
+    width: 5rem;
+    height: 2rem;
+    border: 1px solid #ee5253;
+    color: #ee5253;
+    font-weight: 500;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover {
+      background: #ee5253;
+      color: white;
+    }
+  }
+}

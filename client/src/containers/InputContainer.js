@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import InputTemplate from '../components/InputTemplate';
+import InputTemplate from '../components/InputTemplate/InputTemplate';
 import * as inputActions from '../store/input'
 import * as todosActions from '../store/todos'
 import { bindActionCreators } from 'redux'

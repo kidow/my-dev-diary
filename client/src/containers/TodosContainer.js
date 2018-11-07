@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TodosTemplate from '../components/TodosTemplate'
+import TodosTemplate from '../components/TodosTemplate/TodosTemplate'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as todosActions from '../store/todos'
