@@ -22,15 +22,18 @@ class InputContainer extends Component {
     InputActions.toggle(learned)
   }
 
-  handleInsert = () => {
-    const { InputActions, TodosActions, value } = this.props;
-    const todo = { text: value };
-    if (!value) {
-      alert('내용을 입력하세요')
-    } else {
-      TodosActions.postTodos(todo)
-      InputActions.initialize()
-      this.getUserList()
+  handleInsert = async () => {
+    const { InputActions, TodosActions, value, learned } = this.props;
+    try {
+      if (!value) {
+        alert('내용을 입력하세요')
+      } else {
+        await TodosActions.postTodos({ text: value, learned })
+        InputActions.initialize()
+        this.getUserList()
+      }
+    } catch (e) {
+      console.log(e)
     }
   }
   

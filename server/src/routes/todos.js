@@ -14,8 +14,8 @@ router.get('/', async (req, res, next) => {
 })
 
 router.post('/', async (req, res, next) => {
-  const { text } = req.body
-  const todo = new Todos(text)
+  const { text, learned } = req.body
+  const todo = new Todos({text, learned})
   try {
     await todo.save()
     res.json(todo)
