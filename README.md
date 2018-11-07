@@ -3,6 +3,8 @@
 Stack :
 ==========
 
+![sample.png](./client/public/sample.png)
+
 Front-end :
 ---------
 * React
