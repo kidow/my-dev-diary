@@ -1,7 +1,5 @@
 # My Dev Diary
 
-![sample](./client/public/sample.png)
-
 Stack :
 ==========
 
