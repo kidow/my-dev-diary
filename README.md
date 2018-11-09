@@ -8,6 +8,7 @@ Stack :
 Front-end :
 ---------
 * React
+ * react-router-dom
 * Redux
   * redux-pender
   * redux-actions
