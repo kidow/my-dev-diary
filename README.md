@@ -1,9 +1,9 @@
 # My Dev Diary
 
+![sample.png](./sample.png)
+
 Stack :
 ==========
-
-![sample.png](./sample.png)
 
 Front-end :
 ---------
