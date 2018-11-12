@@ -3,6 +3,7 @@ import TodosTemplate from '../components/TodosTemplate/TodosTemplate'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as todosActions from '../store/todos'
+import Pagination from '../components/Pagination';
 
 class TodosContainer extends Component {
   getTodoList = () => {
@@ -17,7 +18,10 @@ class TodosContainer extends Component {
   render() {
     const { todos } = this.props
     return (
-      <TodosTemplate todos={todos}/>
+      <>
+        <TodosTemplate todos={todos}/>
+        <Pagination />
+      </>
     );
   }
 }
