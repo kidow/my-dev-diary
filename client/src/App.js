@@ -12,7 +12,7 @@ const App = () => {
           <InputContainer />
           <div className='explain'>
             <span className='learned'>Learned</span>
-            <span className='to-learn'>To-learn</span>
+            <span className='to-know'>To-know</span>
           </div>
           <TodosContainer />
         </div>

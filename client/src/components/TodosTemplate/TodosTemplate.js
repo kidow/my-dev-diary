@@ -3,9 +3,7 @@ import moment from 'moment'
 import './TodosTemplate.scss'
 
 const TodosTemplate = ({todos}) => {
-  const dateList = todos.map(date => {
-    return moment(date.createdAt).format('ll')
-  })
+  const dateList = todos.map(date => moment(date.createdAt).format('ll'))
   const dates = [...new Set(dateList)]
   const todoList = dates.map((date, index) => {
     return (
