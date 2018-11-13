@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as todosActions from '../store/todos'
 import Pagination from '../components/Pagination';
+import Loading from '../components/Loading/Loading';
 
 class TodosContainer extends Component {
   getTodoList = () => {
@@ -16,10 +17,10 @@ class TodosContainer extends Component {
   }
   
   render() {
-    const { todos } = this.props
+    const { todos, loading } = this.props
     return (
       <>
-        <TodosTemplate todos={todos}/>
+        {loading ? <Loading /> : <TodosTemplate todos={todos}/>}
         <Pagination />
       </>
     );
@@ -28,7 +29,8 @@ class TodosContainer extends Component {
 
 export default connect(
   state => ({
-    todos: state.todos.get('todos')
+    todos: state.todos.get('todos'),
+    loading: state.pender.pending['todos/GET_TODOS']
   }),
   dispatch => ({
     TodosActions: bindActionCreators(todosActions, dispatch)
