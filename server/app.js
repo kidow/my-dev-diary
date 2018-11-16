@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
+const PORT = process.env.PORT || 8000
 
 const todosRouter = require('./src/routes/todos')
 
@@ -24,6 +25,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './public', 'index.html'));
 });
 
-app.listen(8000, () => {
-  console.log('App listening on port 8000!');
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}!`);
 });

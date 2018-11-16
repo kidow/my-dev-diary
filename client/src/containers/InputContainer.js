@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 class InputContainer extends Component {
-  getUserList = () => {
+  getTodoList = () => {
     const { TodosActions } = this.props
     TodosActions.getTodos()
   }
@@ -30,7 +30,7 @@ class InputContainer extends Component {
       } else {
         await TodosActions.postTodos({ text: value, learned })
         InputActions.initialize()
-        this.getUserList()
+        this.getTodoList()
       }
     } catch (e) {
       console.log(e)
