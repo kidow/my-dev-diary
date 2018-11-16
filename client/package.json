@@ -17,6 +17,10 @@
     "redux-devtools-extension": "^2.13.5",
     "redux-pender": "^1.2.1"
   },
+  "engines": {
+    "node": "v8.12.0",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
