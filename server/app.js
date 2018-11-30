@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URI, { dbName: 'mydevdiary', useNewUrlParser:
   } else {
     console.log('몽고디비 연결 성공')
   }
-})
+}) 
 
 app.use(express.json())
 app.use(cors())
