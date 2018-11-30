@@ -25,9 +25,7 @@ class InputContainer extends Component {
   handleInsert = async () => {
     const { InputActions, TodosActions, value, learned } = this.props;
     try {
-      if (!value) {
-        alert('내용을 입력하세요')
-      } else {
+      if (value) {
         await TodosActions.postTodos({ text: value, learned })
         InputActions.initialize()
         this.getTodoList()
