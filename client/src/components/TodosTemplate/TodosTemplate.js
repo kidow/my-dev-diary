@@ -9,8 +9,10 @@ const TodosTemplate = ({todos}) => {
     return (
       <div key={index} className='todo'>
         <h2 className='date'>{date}</h2>
-        {todos.filter(item => moment(item.createdAt).format('ll') === date).map((item, i) => {
-          return <div key={i} className={item.learned ? 'learned' : null}>{item.text}</div>
+        {todos
+          .filter(item => moment(item.createdAt).format('ll') === date)
+          .map((item, i) => {
+            return <div key={i} className={item.learned ? 'learned' : null}>{item.text}</div>
         })}
       </div>
     )
